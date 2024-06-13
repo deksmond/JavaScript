@@ -7,7 +7,7 @@
   ii. **Non-primitives**: object
   
   > [!TIP]
-  > Undefined means not assigned and it is used for dynamic variables
+  > Undefined means not assigned and it is used for dynamic variables.
   > Null means empty
   
   #### **Variables**
@@ -256,7 +256,66 @@ ii. **Continue**
 
 ### 8. **Functions**
 
-  
+A function is a reusable piece of code that can be used anywhere, its main purpose is to avoid duplication of code. It can be created even if being reused isn't the intention.
+
+**Syntax**
+
+```
+function functionName(param1, param2,...) {
+  //function body
+}
+```
+> [!NOTE]
+> Functions carry out actions. They always return a value.
+
+> [!IMPORTANT]
+> Values passed as parameters to a function are copied to its local variables.
+
+i. Local variables declared can only be accessed by the function where it was declared.
+ii. Global variables can be accessed and used by any function. It is advised to use global variables in a minimal amount and use local variables instead.
+iii. Parameters are variables declared in parenthesis when declaring a function.
+iv. Argument are values used when calling the function for execution (**the argument(s) must match the amount of declared parameters**).
+v. Default parameters can be used in a function, they can be manipulated to return whatever value you defined.
+
+Example
+
+```
+function showMessage(from, text) {
+
+  if (from == undefined || from == null) {
+    from = from || 'sender information unavailable';
+  }
+
+let content = alert(`Sender: ${from}, Message: ${text}`);
+  return content //Sender: undefined, Message: We are progressing 
+}
+
+showMessage(from, 'We are progressing');
+```
+vi. A return statement is used to give the value to the calling code. Multiple return statements can be used in a function. **If a return statement is used without a value, it exists immediately.**
+vii. Functions are actions. Their names should be a verb, they must be accurate and describe what the function actually does.
+
+  **Function expressions**
+
+When a function is written with a variable name, parenthesis and a function body, that is referred to as a **function declaration**. When a function is assigned to a variable or the function is copied to a variable, that is a **function expression**.
+
+Example
+ ```
+  let newNumber = function (){
+    alert('0549335264');
+  }
+
+  //copying the function
+  function oldNumber() {
+    alert('Number not found');
+  }
+  let newNumber = oldNumber;
+  newNumber();
+  ```
+
+
+
+    
   
 
 
